@@ -1,21 +1,16 @@
-# def largestRectangleArea ( heights):
-#     maxArea = 0
-#     stack = [ ] # pair: (index, height)
-#     for i, h in enumerate (heights):
-#         start = i
-#         while stack and stack [-1][1] > h:
-#             index, height = stack.pop()
-#             maxArea = max(maxArea, height * (i - index))
-#             start = index
-#         stack.append((start, h))
-#     for i, h in stack:
-#         maxArea = max(maxArea, h * (len(heights) - i))
-#     return maxArea
+code = [5,7,1,4]
+k = 3
 
-# print(largestRectangleArea([2, 1,5,6,2,3]))
-
-# n = [5,8,3,7,9,1]
-# m = len(n)
-# print(n[1:] + n[:1])
-li = "0000000000000000000000000000000000000"
-print(len(li))
+n = len(code)
+        
+# If k == 0, all elements should be 0
+if k == 0:
+    print([0] * n ) 
+# Double the array to simulate circular behavior
+extended_code = code * 2
+# Handle positive and negative k
+if k > 0:
+    print( [sum(extended_code[i + 1:i + 1 + k]) for i in range(n)])
+else:
+    k = abs(k)
+    print( [sum(extended_code[i + n - k:i + n]) for i in range(n)])
