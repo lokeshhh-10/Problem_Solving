@@ -1,16 +1,9 @@
-code = [5,7,1,4]
-k = 3
+sentence = "the dcattle was rattled by the battery"
+sen = sentence.split()
+print(sen)
+print(" ".join(sen))
 
-n = len(code)
-        
-# If k == 0, all elements should be 0
-if k == 0:
-    print([0] * n ) 
-# Double the array to simulate circular behavior
-extended_code = code * 2
-# Handle positive and negative k
-if k > 0:
-    print( [sum(extended_code[i + 1:i + 1 + k]) for i in range(n)])
-else:
-    k = abs(k)
-    print( [sum(extended_code[i + n - k:i + n]) for i in range(n)])
+# if "cat" in sentence:
+#     print("Cat")
+# else:
+#     print(None) 
